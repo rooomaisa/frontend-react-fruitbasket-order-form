@@ -81,8 +81,90 @@ function App() {
                   Reset
               </button>
           </section>
+
+          <form>
+              <section>
+                  <label htmlFor={'firstname'}>Firstname</label>
+                  <input
+                      name={'firstname'}
+                      id={'firstname'}
+                      type={'text'}
+                  />
+              </section>
+              <section>
+                  <label htmlFor={'Lastname'}>Firstname</label>
+                  <input
+                      name={'lastname'}
+                      id={'lastname'}
+                      type={'text'}
+                  />
+              </section>
+              <section>
+                  <label htmlFor={'age'}>Age</label>
+                  <input
+                      name={'age'}
+                      id={'age'}
+                      type={'age'}
+                  />
+              </section>
+              <section>
+                  <label htmlFor={'zipcode'}>Zipcode</label>
+                  <input
+                      name={'zipcode'}
+                      id={'zipcode'}
+                      type={'zipcode'}
+                  />
+              </section>
+
+              <section>
+                  <label htmlFor={'frequency'}>Frequency</label>
+              </section>
+              <section>
+                  <select
+                      name={"delivery"}
+                      id={'delivery'}>
+                      <option value={'select frequency'} disabled selected>Select frequency</option>
+                      <option value={'day'}>Every day some vitamin C! Champ</option>
+                      <option value={'twoaweek'}>Two times a week, Almost Champ</option>
+                      <option value={'onceaweek'}>Once a week? kind of lame..</option>
+                  </select>
+              </section>
+
+              <section>
+                  <input
+                         name={'daytime'}
+                         id={'daytime'}
+                         type={'radio'}/>
+                  <label htmlFor={'time-slot'}>Daytime</label>
+                  <input name={'nighttime'}
+                         id={'nighttime'}
+                         type={'radio'}/>
+                  <label htmlFor={'time-slot'}>Nighttime</label>
+              </section>
+
+              <section>
+                  <label htmlFor={'Remarks'}>Remarks</label>
+                  <textarea
+                      name={'remark'}
+                      id={'remark'}
+                      rows={5}
+                      cols={40}
+                      />
+              </section>
+
+              <section>
+                  <input
+                      type={'checkbox'}
+                      name={'agree-terms'}
+                      id={'agree-terms'}/>
+                  <label htmlFor={'agree-terms'}>I agree to the term and conditions</label>
+              </section>
+
+              <button type={'submit'}>Submit</button>
+
+          </form>
       </>
-  )
+    );
 }
 
 export default App
