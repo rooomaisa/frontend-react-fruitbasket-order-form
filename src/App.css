@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -6,6 +8,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 article{
@@ -17,4 +21,9 @@ article{
     margin: 10px 0;
     padding: 5px 10px;
     width: 100%;
+}
+
+article button{
+    padding: 10px;
+    margin: 10px 10px;
 }
