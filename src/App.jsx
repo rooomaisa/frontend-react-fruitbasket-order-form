@@ -19,6 +19,30 @@ function App() {
         setStrawberries(0);
     }
 
+    const [formState, setFormState] = useState({
+        firstname:'',
+        lastname:'',
+        age:0,
+        zipcode:'',
+        frequency:'Select frequency',
+        daytime:'day',
+        remark:'',
+        agreeterms: false,
+    });
+
+    function handleChange(e) {
+        const changedFieldName = e.target.name;
+        const newValue = e.target.type ==='checkbox' ? e.target.checked : e.target.value;
+
+        setFormState({
+            ... formState,
+            [changedFieldName]: newValue,
+            });
+
+        console.log(handleChange)
+
+    }
+
     return (
       <>
           <h1>Fruitmand bezorgservice</h1>
@@ -89,6 +113,8 @@ function App() {
                       name={'firstname'}
                       id={'firstname'}
                       type={'text'}
+                      value={formState.firstname}
+                      onChange={handleChange}
                   />
               </section>
               <section>
@@ -97,6 +123,8 @@ function App() {
                       name={'lastname'}
                       id={'lastname'}
                       type={'text'}
+                      value={formState.lastname}
+                      onChange={handleChange}
                   />
               </section>
               <section>
@@ -104,7 +132,9 @@ function App() {
                   <input
                       name={'age'}
                       id={'age'}
-                      type={'age'}
+                      type={'number'}
+                      value={formState.age}
+                      onChange={handleChange}
                   />
               </section>
               <section>
@@ -112,7 +142,9 @@ function App() {
                   <input
                       name={'zipcode'}
                       id={'zipcode'}
-                      type={'zipcode'}
+                      type={'text'}
+                      value={formState.zipcode}
+                      onChange={handleChange}
                   />
               </section>
 
@@ -122,7 +154,10 @@ function App() {
               <section>
                   <select
                       name={"delivery"}
-                      id={'delivery'}>
+                      id={'delivery'}
+                      value={formState.frequency}
+                      onChange={handleChange}
+                  >
                       <option value={'select frequency'} disabled selected>Select frequency</option>
                       <option value={'day'}>Every day some vitamin C! Champ</option>
                       <option value={'twoaweek'}>Two times a week, Almost Champ</option>
@@ -134,11 +169,19 @@ function App() {
                   <input
                          name={'daytime'}
                          id={'daytime'}
-                         type={'radio'}/>
+                         type={'radio'}
+                         value={'day'}
+                         checked={formState.daytime === 'day'}
+                         onChange={handleChange}
+                  />
                   <label htmlFor={'time-slot'}>Daytime</label>
                   <input name={'nighttime'}
                          id={'nighttime'}
-                         type={'radio'}/>
+                         type={'radio'}
+                         value={'night'}
+                         checked={formState.daytime === 'night'}
+                         onChange={handleChange}
+                  />
                   <label htmlFor={'time-slot'}>Nighttime</label>
               </section>
 
@@ -149,15 +192,20 @@ function App() {
                       id={'remark'}
                       rows={5}
                       cols={40}
+                      value={formState.remark}
+                      onChange={handleChange}
                       />
               </section>
 
               <section>
                   <input
                       type={'checkbox'}
-                      name={'agree-terms'}
-                      id={'agree-terms'}/>
-                  <label htmlFor={'agree-terms'}>I agree to the term and conditions</label>
+                      name={'agreeterms'}
+                      id={'agreeterms'}
+                      value={formState.agreeterms}
+                      onChange={handleChange}
+                  />
+                  <label htmlFor={'agreeterms'}>I agree to the term and conditions</label>
               </section>
 
               <button type={'submit'}>Submit</button>
