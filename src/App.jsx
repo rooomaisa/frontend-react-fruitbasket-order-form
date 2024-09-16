@@ -24,8 +24,8 @@ function App() {
         lastname:'',
         age:0,
         zipcode:'',
-        frequency:'Select frequency',
-        daytime:'day',
+        delivery:'Select frequency',
+        choosetime:'day',
         remark:'',
         agreeterms: false,
     });
@@ -167,19 +167,19 @@ function App() {
 
               <section>
                   <input
-                         name={'daytime'}
+                         name={'choosetime'}
                          id={'daytime'}
                          type={'radio'}
                          value={'day'}
-                         checked={formState.daytime === 'day'}
+                         checked={formState.choosetime === 'day'}
                          onChange={handleChange}
                   />
                   <label htmlFor={'time-slot'}>Daytime</label>
-                  <input name={'nighttime'}
+                  <input name={'choosetime'}
                          id={'nighttime'}
                          type={'radio'}
                          value={'night'}
-                         checked={formState.daytime === 'night'}
+                         checked={formState.choosetime === 'night'}
                          onChange={handleChange}
                   />
                   <label htmlFor={'time-slot'}>Nighttime</label>
