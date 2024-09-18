@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+article{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+article button{
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+form section{
+    margin: 15px 0 0 0;
+}
+
+textarea{
+    display: block;
+}
+
+
+label{
+    margin-right: 8px;
+}
+
+section input{
+    margin-right: 8px;
+}
+
+button{
+    margin:8px 8px 0 0;
+}
