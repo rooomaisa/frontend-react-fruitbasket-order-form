@@ -1,6 +1,8 @@
 
 import './App.css'
-import {useState} from "react";
+import React, {useState} from "react";
+import Button from "./components/Button.jsx";
+import Counters from "./components/Counters.jsx";
 // import {useForm} from "react-hook-form";
 
 function App() {
@@ -50,13 +52,18 @@ function App() {
               <article>
                   <span className="icon">🍓</span>
                   <h2>Aardbeien</h2>
-                  <button type={'button'} onClick={() => setStrawberries(strawberries -1)} disabled={strawberries===0}>
+                  <button type={'button'} onClick={() => setStrawberries(strawberries - 1)}
+                          disabled={strawberries === 0}>
                       -
                   </button>
                   {strawberries}
                   <button type={'button'} onClick={() => setStrawberries(+1)}>
                       +
                   </button>
+                  {/*<Counters*/}
+                  {/*    fruitCount={strawberries}*/}
+                  {/*    setFruitCount={setStrawberries}*/}
+                  {/*/>*/}
               </article>
           </section>
 
@@ -64,7 +71,7 @@ function App() {
               <article>
                   <span className="icon">🍌</span>
                   <h2>Bananen</h2>
-                  <button type={'button'} onClick={() => setBananas (bananas -1)} disabled={bananas===0}>
+                  <button type={'button'} onClick={() => setBananas(bananas - 1)} disabled={bananas === 0}>
                       -
                   </button>
                   {bananas}
@@ -92,18 +99,26 @@ function App() {
               <article>
                   <span className="icon">🥝</span>
                   <h2>Kiwi's</h2>
-                  <button type={'button'} onClick={() => setKiwis(kiwis-1)} disabled={kiwis===0}>
+                  <button type={'button'} onClick={() => setKiwis(kiwis - 1)} disabled={kiwis === 0}>
                       -
                   </button>
                   {kiwis}
-                  <button type={'button'} onClick={() => setKiwis(kiwis+1)}>
+                  <button type={'button'} onClick={() => setKiwis(kiwis + 1)}>
                       +
                   </button>
               </article>
 
+              <Button
+                  type={'button'}
+                  handleOnClick={resetFruits}
+                  buttontext={'Reset'}
+                  className={'button'}
+              />
+              {/*waarom valt mijn css weg in dit component? */}
               <button type={"button"} onClick={() => resetFruits()}>
                   Reset
               </button>
+
           </section>
 
           <form>
